@@ -1,0 +1,72 @@
+<div>
+    <h2 data-translate="examen2App.solicitud.home.title">Solicituds</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="solicitud.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="examen2App.solicitud.home.createLabel">
+                        Create new Solicitud
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="examen2App.solicitud.fechaEntrega">Fecha Entrega</span></th>
+                    <th><span data-translate="examen2App.solicitud.esRecursivo">Es Recursivo</span></th>
+                    <th><span data-translate="examen2App.solicitud.frecuencia">Frecuencia</span></th>
+                    <th><span data-translate="examen2App.solicitud.estado">Estado</span></th>
+                    <th><span data-translate="examen2App.solicitud.tipo">Tipo</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="solicitud in vm.solicituds track by solicitud.id">
+                    <td><a ui-sref="solicitud-detail({id:solicitud.id})">{{solicitud.id}}</a></td>
+                    <td>{{solicitud.fechaEntrega | date:'medium'}}</td>
+                    <td>{{solicitud.esRecursivo}}</td>
+                    <td>
+                        <a ui-sref="frecuencia-detail({id:solicitud.frecuencia.id})">{{solicitud.frecuencia.nombre}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="estado-detail({id:solicitud.estado.id})">{{solicitud.estado.nombre}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="tipo in solicitud.tipos">
+                            <a class="form-control-static" ui-sref="tipo-detail({id: tipo.id})">{{tipo.nombre}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="solicitud-detail({id:solicitud.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="solicitud.edit({id:solicitud.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="solicitud.delete({id:solicitud.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

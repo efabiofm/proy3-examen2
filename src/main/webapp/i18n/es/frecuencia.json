@@ -1,0 +1,21 @@
+{
+    "examen2App": {
+        "frecuencia" : {
+            "home": {
+                "title": "Frecuencias",
+                "createLabel": "Crear nuevo Frecuencia",
+                "createOrEditLabel": "Crear o editar Frecuencia"
+            },
+            "created": "Un nuevo Frecuencia ha sido creado con el identificador {{ param }}",
+            "updated": "Un Frecuencia ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Frecuencia ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Frecuencia {{ id }}?"
+            },
+            "detail": {
+                "title": "Frecuencia"
+            },
+            "nombre": "Nombre"
+        }
+    }
+}

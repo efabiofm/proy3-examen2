@@ -1,0 +1,40 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "frecuencia",
+            "otherEntityName": "frecuencia",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "estado",
+            "otherEntityName": "estado",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "tipo",
+            "otherEntityName": "tipo",
+            "otherEntityField": "nombre",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "fechaEntrega",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "esRecursivo",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170216030749",
+    "entityTableName": "solicitud",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,22 @@
+{
+    "examen2App": {
+        "tipo" : {
+            "home": {
+                "title": "Tipos",
+                "createLabel": "Create a new Tipo",
+                "createOrEditLabel": "Create or edit a Tipo"
+            },
+            "created": "A new Tipo is created with identifier {{ param }}",
+            "updated": "A Tipo is updated with identifier {{ param }}",
+            "deleted": "A Tipo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipo {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo"
+            },
+            "nombre": "Nombre",
+            "precio": "Precio"
+        }
+    }
+}

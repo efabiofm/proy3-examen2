@@ -1,0 +1,41 @@
+
+<div>
+    <h2><span data-translate="examen2App.solicitud.detail.title">Solicitud</span> {{vm.solicitud.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="examen2App.solicitud.fechaEntrega">Fecha Entrega</span></dt>
+        <dd>
+            <span>{{vm.solicitud.fechaEntrega | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="examen2App.solicitud.esRecursivo">Es Recursivo</span></dt>
+        <dd>
+            <span>{{vm.solicitud.esRecursivo}}</span>
+        </dd>
+        <dt><span data-translate="examen2App.solicitud.frecuencia">Frecuencia</span></dt>
+        <dd>
+            <a ui-sref="frecuencia-detail({id:vm.solicitud.frecuencia.id})">{{vm.solicitud.frecuencia.nombre}}</a>
+        </dd>
+        <dt><span data-translate="examen2App.solicitud.estado">Estado</span></dt>
+        <dd>
+            <a ui-sref="estado-detail({id:vm.solicitud.estado.id})">{{vm.solicitud.estado.nombre}}</a>
+        </dd>
+        <dt><span data-translate="examen2App.solicitud.tipo">Tipo</span></dt>
+        <dd>
+            <span ng-repeat="tipo in vm.solicitud.tipos">
+                <a ui-sref="tipo-detail({id: tipo.id})">{{tipo.nombre}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="solicitud-detail.edit({id:vm.solicitud.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

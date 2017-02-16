@@ -1,0 +1,41 @@
+entity Beneficio {
+	nombre String,
+    descripcion String,
+    localizacion String
+}
+
+entity Entrada {
+	kilos Double,
+    fechaEntrada ZonedDateTime,
+}
+
+entity Tipo {
+	nombre String,
+    precio Double
+}
+
+entity Solicitud {
+    fechaEntrega ZonedDateTime,
+    esRecursivo Boolean
+}
+
+entity Estado {
+	nombre String
+}
+
+entity Frecuencia {
+	nombre String
+}
+
+relationship ManyToOne {
+	Entrada{beneficio(nombre)} to Beneficio,
+    Entrada{tipo(nombre)} to Tipo,
+    Solicitud{frecuencia(nombre)}  to Frecuencia,
+    Solicitud{estado(nombre)}  to Estado
+}
+
+relationship ManyToMany {
+	Solicitud{tipo(nombre)} to Tipo
+}
+
+

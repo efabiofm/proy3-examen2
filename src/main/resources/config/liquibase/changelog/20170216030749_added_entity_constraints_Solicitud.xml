@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Solicitud.
+    -->
+    <changeSet id="20170216030749-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="frecuencia_id"
+                                 baseTableName="solicitud"
+                                 constraintName="fk_solicitud_frecuencia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="frecuencia"/>
+
+        <addForeignKeyConstraint baseColumnNames="estado_id"
+                                 baseTableName="solicitud"
+                                 constraintName="fk_solicitud_estado_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="estado"/>
+
+        <addForeignKeyConstraint baseColumnNames="solicituds_id"
+                                 baseTableName="solicitud_tipo"
+                                 constraintName="fk_solicitud_tipo_solicituds_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="solicitud"/>
+        <addForeignKeyConstraint baseColumnNames="tipos_id"
+                                 baseTableName="solicitud_tipo"
+                                 constraintName="fk_solicitud_tipo_tipos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo"/>
+        
+    </changeSet>
+</databaseChangeLog>
