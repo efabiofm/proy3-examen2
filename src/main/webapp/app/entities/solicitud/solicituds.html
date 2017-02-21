@@ -17,7 +17,7 @@
                         Filtrar por estado
                         <select type="text" class="form-control" name="estado" id="field_estado"i
                                 ng-model="vm.solicitud.estado"
-                                ng-options="o for o in vm.estados">
+                                ng-options="o.nombre as o.nombre for o in vm.estados">
                             <option value="">--Todos--</option>
                         </select>
                     </span>
@@ -42,7 +42,7 @@
                 <tr ng-repeat="solicitud in vm.solicituds | filter: vm.solicitud.estado || '' track by solicitud.id">
                     <td><a ui-sref="solicitud-detail({id:solicitud.id})">{{solicitud.id}}</a></td>
                     <td>{{solicitud.fechaEntrega | date:'medium'}}</td>
-                    <td>{{solicitud.esRecursivo}}</td>
+                    <td>{{solicitud.esRecursivo ? 'Sí': 'No' }}</td>
                     <td>
                         <a ui-sref="frecuencia-detail({id:solicitud.frecuencia.id})">{{solicitud.frecuencia.nombre}}</a>
                     </td>
