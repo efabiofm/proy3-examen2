@@ -11,6 +11,17 @@
                     </span>
                 </button>
             </div>
+            <div class="col-xs-4">
+                <span class="glyphicon glyphicon-filter"></span>
+                <span >
+                        Filtrar por estado
+                        <select type="text" class="form-control" name="estado" id="field_estado"i
+                                ng-model="vm.solicitud.estado"
+                                ng-options="o for o in vm.estados">
+                            <option value="">--Todos--</option>
+                        </select>
+                    </span>
+            </div>
         </div>
     </div>
     <br/>
@@ -28,7 +39,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="solicitud in vm.solicituds track by solicitud.id">
+                <tr ng-repeat="solicitud in vm.solicituds | filter: vm.solicitud.estado || '' track by solicitud.id">
                     <td><a ui-sref="solicitud-detail({id:solicitud.id})">{{solicitud.id}}</a></td>
                     <td>{{solicitud.fechaEntrega | date:'medium'}}</td>
                     <td>{{solicitud.esRecursivo}}</td>
