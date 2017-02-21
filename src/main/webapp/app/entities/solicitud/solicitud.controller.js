@@ -11,8 +11,10 @@
         var vm = this;
 
         vm.solicituds = [];
+        vm.estados = ["En proceso", "Listo para entrega", "Entregado"];
 
         loadAll();
+
 
         function loadAll() {
             Solicitud.query(function(result) {
