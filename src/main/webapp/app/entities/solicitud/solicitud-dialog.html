@@ -32,7 +32,7 @@
 
         <div class="form-group">
             <label data-translate="examen2App.solicitud.frecuencia" for="field_frecuencia">Frecuencia</label>
-            <select class="form-control" id="field_frecuencia" name="frecuencia" ng-model="vm.solicitud.frecuencia" ng-options="frecuencia as frecuencia.nombre for frecuencia in vm.frecuencias track by frecuencia.id">
+            <select class="form-control" id="field_frecuencia" name="frecuencia" ng-model="vm.solicitud.frecuencia" ng-disabled="!vm.solicitud.esRecursivo" ng-options="frecuencia as frecuencia.nombre for frecuencia in vm.frecuencias track by frecuencia.id">
                 <option value=""></option>
             </select>
         </div>
