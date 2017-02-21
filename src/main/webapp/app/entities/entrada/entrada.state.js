@@ -13,7 +13,7 @@
             parent: 'entity',
             url: '/entrada',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_INVENTARIO'],
                 pageTitle: 'examen2App.entrada.home.title'
             },
             views: {
@@ -35,7 +35,7 @@
             parent: 'entrada',
             url: '/entrada/{id}',
             data: {
-                authorities: ['ROLE_USER'],
+                authorities: ['ROLE_INVENTARIO'],
                 pageTitle: 'examen2App.entrada.detail.title'
             },
             views: {
@@ -67,7 +67,7 @@
             parent: 'entrada-detail',
             url: '/detail/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_INVENTARIO']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -92,7 +92,7 @@
             parent: 'entrada',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_INVENTARIO']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -121,7 +121,7 @@
             parent: 'entrada',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_INVENTARIO']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -146,7 +146,7 @@
             parent: 'entrada',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_INVENTARIO']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
