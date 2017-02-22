@@ -5,14 +5,20 @@
         .module('examen2App')
         .controller('SolicitudController', SolicitudController);
 
-    SolicitudController.$inject = ['Solicitud'];
+    SolicitudController.$inject = ['Solicitud', 'Estado'];
 
-    function SolicitudController(Solicitud) {
+
+    function SolicitudController(Solicitud, Estado) {
         var vm = this;
 
+        Estado.query().$promise.then(function (resultado){
+            vm.estados = resultado;
+        });
         vm.solicituds = [];
+        // vm.estados = ["En proceso", "Listo para entrega", "Entregado"];
 
         loadAll();
+
 
         function loadAll() {
             Solicitud.query(function(result) {
